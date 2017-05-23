@@ -1,5 +1,5 @@
 (function(angular) {
-
+//this should come as a common controller
 
     angular.module("app").controller('TypeAheadController', function($scope, dataFactory) {
         dataFactory.get('common/states.json').then(function(data) {
