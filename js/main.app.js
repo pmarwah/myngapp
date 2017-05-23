@@ -1,9 +1,11 @@
 define(['./config.app.js',
         './../common/common.factory.js',
-        './../common/common.ctrl.js'
+        './../common/common.ctrl.js',
+        './../components/header/header.directive.js',
+        './../components/typeAhead/typeAhead.directive.js'
     ],
 
-    function(config, commonFactory, commonController) {
+    function(config, commonFactory, commonController, header, typeAhead) {
         'use strict';
 
         var app = angular.module('app', ['ngRoute']);
@@ -11,13 +13,6 @@ define(['./config.app.js',
         app.config(config);
         app.factory('dataFactory', commonFactory);
         app.controller('appController', commonController);
-    }
-);
-
-require(['./config.app.js'],
-    function() {
-        'use strict';
-
-        angular.bootstrap(document, ['app']);
+        app.directive('typeAhead', typeAhead);
     }
 );
