@@ -1,3 +1,24 @@
+require.config({
+    //baseUrl: ../,  //data-main
+    paths: {
+        ui_router: 'libs/angular-ui-router',
+        ng_resource: 'libs/angular-resource.min',
+    },
+    shim: {
+       'ui_router': {
+            deps: []
+        } 
+    },
+  config: { 
+        text: { //to be used for including html files using require
+                    useXhr: function (url, protocol, hostname, port) { 
+                    return true;    
+                } 
+        } 
+   }
+});
+
+
 define(['./config.app.js',
         './../common/common.factory.js',
         './../common/common.ctrl.js',
