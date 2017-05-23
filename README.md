@@ -13,4 +13,4 @@
 
 #Clean up index file to include the common components like Header, main body content and charts
 
-#config file will drive the application route and will require the files as well
+#main app file will drive the application route and will require the files as well
