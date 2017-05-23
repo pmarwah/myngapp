@@ -1,1 +1,3 @@
+require();
+
 angular.module('app', []);

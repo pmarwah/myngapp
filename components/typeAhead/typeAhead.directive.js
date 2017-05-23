@@ -28,7 +28,7 @@
                     scope.current = index;
                 };
             },
-            templateUrl: 'components/templateurl.html'
+            templateUrl: 'typeAhead.tpl.html'
         }
     });
 
