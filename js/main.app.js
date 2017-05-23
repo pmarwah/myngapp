@@ -3,6 +3,7 @@ require.config({
     paths: {
         ui_router: 'libs/angular-ui-router',
         ng_resource: 'libs/angular-resource.min',
+        app: 'init.app'
     },
     shim: {
        'ui_router': {
@@ -18,22 +19,7 @@ require.config({
    }
 });
 
-
-define(['./config.app.js',
-        './../common/common.factory.js',
-        './../common/common.ctrl.js',
-        './../components/header/header.directive.js',
-        './../components/typeAhead/typeAhead.directive.js'
-    ],
-
-    function(config, commonFactory, commonController, header, typeAhead) {
-        'use strict';
-
-        var app = angular.module('app', ['ngRoute']);
-
-        app.config(config);
-        app.factory('dataFactory', commonFactory);
-        app.controller('appController', commonController);
-        app.directive('typeAhead', typeAhead);
-    }
-);
+require(['ui_router', 'app'
+], function (ui_router, App) {
+    App.initialize();
+});
